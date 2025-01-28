@@ -1,0 +1,37 @@
+.header {
+  width: 100%;
+  max-width: 1280px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__nav {
+    &--link {
+      margin-left: 50px;
+      text-decoration: none;
+      color: black;
+      font-size: 24px;
+      font-weight: 500;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+// Media query pour des écrans plus petits
+@media (max-width: 768px) {
+  .header {
+    &__nav {
+      &--link {
+        margin-left: 26px;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+    }
+    &__logo {
+      width: 145px;
+    }
+  }
+}

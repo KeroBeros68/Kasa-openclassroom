@@ -7,9 +7,10 @@ import Error from '../../pages/Error'
 function AppRouter() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home />}>
+        <Route path="/lodging" element={<Lodging />} />
+      </Route>
       <Route path="/about" element={<About />} />
-      <Route path="/lodging" element={<Lodging />} />
       <Route path="*" element={<Error />} />
     </Routes>
   )

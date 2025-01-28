@@ -1,11 +1,7 @@
+import Baner from '../../components/Baner'
+
 function Home() {
-  return (
-    <>
-      <div>
-        <h1>coucou</h1>
-      </div>
-    </>
-  )
+  return <Baner />
 }
 
 export default Home
