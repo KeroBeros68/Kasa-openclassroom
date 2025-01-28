@@ -1,10 +1,10 @@
+import Banner from '../../components/Banner'
+
 function About() {
   return (
-    <>
-      <div>
-        <h1>coucou</h1>
-      </div>
-    </>
+    <main>
+      <Banner />
+    </main>
   )
 }
 
