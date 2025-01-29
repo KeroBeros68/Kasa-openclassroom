@@ -4,7 +4,25 @@
   border-radius: 25px;
   background: #f6f6f6;
   padding: 56px 50px;
+  margin-top: 43px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 40px;
+}
+
+// Media query pour des écrans plus petits
+@media (max-width: 993px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .gallery {
+    margin-top: 22px;
+    padding: 0;
+    grid-template-columns: 1fr;
+    background: none;
+    gap: 22px;
+  }
 }

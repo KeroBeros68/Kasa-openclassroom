@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1280px;
   margin: auto;
-  padding: 45px 20px 0 20px;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -22,7 +22,10 @@
 }
 
 // Media query pour des écrans plus petits
-@media (max-width: 768px) {
+@media (max-width: 993px) {
+}
+
+@media (max-width: 767px) {
   .header {
     &__nav {
       &--link {

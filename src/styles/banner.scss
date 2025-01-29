@@ -3,35 +3,45 @@
   width: 100%;
   height: 223px;
   border-radius: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   &__title {
     font-size: 48px;
     color: white;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin: 80px 16px 0;
+  }
+  &.home {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url('../assets/HomeBanner.png');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  &.about {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+      url('../assets/AboutBanner.png');
+    background-size: cover;
+    background-position: center;
   }
 }
 
-.home {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('../assets/HomeBanner.png');
-  background-size: cover;
-  background-position: center;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-.about {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-    url('../assets/AboutBanner.png');
-  background-size: cover;
-  background-position: center;
-}
 // Media query pour des écrans plus petits
-@media (max-width: 768px) {
+@media (max-width: 993px) {
+  .banner {
+    &__title {
+      font-size: 36px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
   .banner {
     height: 111px;
     border-radius: 10px;
+    text-align: start;
     &__title {
+      width: 230px;
+      margin-top: 25px;
       font-size: 24px;
     }
   }

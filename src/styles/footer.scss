@@ -1,13 +1,13 @@
 .footer {
   width: 100%;
-  padding: 60px 0 40px 0;
+  padding: 66px 0 29px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: black;
   color: white;
-  gap: 50px;
-  &__quote-line {
+  gap: 29px;
+  .footer__quote-line {
     display: flex;
     font-size: 24px;
     font-weight: 500;
@@ -16,7 +16,7 @@
 }
 
 // Media query pour des écrans plus petits
-@media (max-width: 768px) {
+@media (max-width: 800px) {
   .footer {
     gap: 20px;
     &__quote-line {
