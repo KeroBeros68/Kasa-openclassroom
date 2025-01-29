@@ -1,11 +1,5 @@
 function Lodging() {
-  return (
-    <>
-      <div>
-        <h1>coucou</h1>
-      </div>
-    </>
-  )
+  return <main></main>
 }
 
 export default Lodging

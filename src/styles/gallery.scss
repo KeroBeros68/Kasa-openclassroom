@@ -1,0 +1,10 @@
+.gallery {
+  max-width: 1240px;
+  width: 100%;
+  border-radius: 25px;
+  background: #f6f6f6;
+  padding: 56px 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}

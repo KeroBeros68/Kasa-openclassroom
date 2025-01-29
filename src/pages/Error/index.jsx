@@ -1,11 +1,5 @@
 function Error() {
-  return (
-    <>
-      <div>
-        <h1>Aie</h1>
-      </div>
-    </>
-  )
+  return <main></main>
 }
 
 export default Error

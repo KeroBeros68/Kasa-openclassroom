@@ -1,12 +1,12 @@
 .footer {
   width: 100%;
-  height: 209px;
+  padding: 60px 0 40px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: black;
   color: white;
+  gap: 50px;
   &__quote-line {
     display: flex;
     font-size: 24px;
@@ -18,6 +18,7 @@
 // Media query pour des écrans plus petits
 @media (max-width: 768px) {
   .footer {
+    gap: 20px;
     &__quote-line {
       flex-direction: column;
       align-items: center;
