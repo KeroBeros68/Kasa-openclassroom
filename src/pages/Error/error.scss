@@ -1,0 +1,47 @@
+.error {
+  flex: 1 0 auto;
+  width: 100%;
+  padding: 139px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 139px;
+  color: #ff6060;
+  text-align: center;
+  &__title {
+    font-size: 248px;
+  }
+  &__quote {
+    font-size: 36px;
+  }
+  &__link {
+    font-size: 18px;
+    color: black;
+  }
+}
+
+// Media query pour des écrans plus petits
+@media (max-width: 993px) {
+  .error {
+    &__quote {
+      font-size: 30px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .error {
+    padding: 113px 20px;
+    gap: 113px;
+    &__title {
+      font-size: 96px;
+    }
+    &__quote {
+      width: 220px;
+      font-size: 18px;
+    }
+    &__link {
+      font-size: 14px;
+    }
+  }
+}

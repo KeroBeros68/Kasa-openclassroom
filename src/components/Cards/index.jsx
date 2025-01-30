@@ -1,11 +1,11 @@
 import PropTypes from 'prop-types'
-import '../../styles/card.scss'
+import './card.scss'
 
 function Card({ title, cover }) {
   console.log(title)
   return (
     <article className="card">
-      <img className="card__img" src={cover}></img>
+      <img className="card__img" src={cover} alt={title}></img>
       <h2 className="card__title">{title}</h2>
     </article>
   )

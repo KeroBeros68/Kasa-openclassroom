@@ -1,6 +1,7 @@
 import Card from '../Cards'
-import '../../styles/gallery.scss'
+import './gallery.scss'
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router'
 
 function Gallery() {
   const [lodges, setLodges] = useState([])
@@ -13,7 +14,9 @@ function Gallery() {
   return (
     <div className="gallery">
       {lodges.map((lodge) => (
-        <Card key={`${lodge.id}`} title={lodge.title} cover={lodge.cover} />
+        <Link key={`${lodge.id}`} to={`/lodging/${lodge.id}`}>
+          <Card title={lodge.title} cover={lodge.cover} />
+        </Link>
       ))}
     </div>
   )

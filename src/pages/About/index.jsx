@@ -1,8 +1,9 @@
 import Banner from '../../components/Banner'
+import './about.scss'
 
 function About() {
   return (
-    <main>
+    <main className="about">
       <Banner />
     </main>
   )

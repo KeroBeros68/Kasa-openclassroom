@@ -1,5 +1,5 @@
 import { useLocation } from 'react-router'
-import '../../styles/banner.scss'
+import './banner.scss'
 
 function Banner() {
   const location = useLocation()
@@ -7,7 +7,7 @@ function Banner() {
 
   return (
     <div
-      className={`banner ${location.pathname === '/about' ? 'about' : 'home'}`}
+      className={`banner ${location.pathname === '/about' ? 'banner--about' : 'banner--home'}`}
     >
       {location.pathname === '/' && (
         <h1 className="banner__title">Chez vous, partout et ailleurs</h1>

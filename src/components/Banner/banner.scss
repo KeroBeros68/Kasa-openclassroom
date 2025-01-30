@@ -10,16 +10,16 @@
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin: 80px 16px 0;
   }
-  &.home {
+  &--home {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url('../assets/HomeBanner.png');
+      url('../../assets/HomeBanner.png');
     background-size: cover;
     background-position: center;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
-  &.about {
+  &--about {
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-      url('../assets/AboutBanner.png');
+      url('../../assets/AboutBanner.png');
     background-size: cover;
     background-position: center;
   }
