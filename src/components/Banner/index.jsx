@@ -1,14 +1,13 @@
 import { useLocation } from 'react-router'
+import PropTypes from 'prop-types'
 import './banner.scss'
 
-function Banner() {
+function Banner({ bannerImg }) {
   const location = useLocation()
-  console.log(location.pathname)
 
   return (
-    <div
-      className={`banner ${location.pathname === '/about' ? 'banner--about' : 'banner--home'}`}
-    >
+    <div className={`banner`}>
+      <img src={bannerImg} className="banner__img" />
       {location.pathname === '/' && (
         <h1 className="banner__title">Chez vous, partout et ailleurs</h1>
       )}
@@ -16,4 +15,7 @@ function Banner() {
   )
 }
 
+Banner.propTypes = {
+  bannerImg: PropTypes.string.isRequired,
+}
 export default Banner

@@ -1,8 +1,28 @@
 .about {
   flex: 1 0 auto;
+  max-width: 1440px;
   width: 100%;
-  padding: 50px 20px;
+  padding: 38px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 38px;
+  &__collapse {
+    width: 73%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+// Media query pour des écrans plus petits
+@media (max-width: 993px) {
+  .about {
+    &__collapse {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
 }

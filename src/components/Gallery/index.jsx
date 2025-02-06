@@ -14,7 +14,11 @@ function Gallery() {
   return (
     <div className="gallery">
       {lodges.map((lodge) => (
-        <Link key={`${lodge.id}`} to={`/lodging/${lodge.id}`}>
+        <Link
+          key={`${lodge.id}`}
+          to={`/lodges/${lodge.id}`}
+          state={{ lodgeData: lodge }}
+        >
           <Card title={lodge.title} cover={lodge.cover} />
         </Link>
       ))}

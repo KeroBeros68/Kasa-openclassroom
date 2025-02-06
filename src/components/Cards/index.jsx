@@ -2,7 +2,6 @@ import PropTypes from 'prop-types'
 import './card.scss'
 
 function Card({ title, cover }) {
-  console.log(title)
   return (
     <article className="card">
       <img className="card__img" src={cover} alt={title}></img>

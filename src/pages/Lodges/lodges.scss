@@ -1,0 +1,58 @@
+.lodge {
+  flex: 1 0 auto;
+  max-width: 1440px;
+  width: 100%;
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__tag {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  &__title {
+    font-weight: 500;
+    margin-bottom: 5px;
+    &--first {
+      color: #ff6060;
+      font-size: 36px;
+    }
+    &--second {
+      font-size: 18px;
+    }
+  }
+  &__collapse {
+    max-width: 1240px;
+    display: flex;
+    gap: 76px;
+    & h2 {
+      font-size: 18px;
+    }
+  }
+  &__container {
+    max-width: 1240px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 0 24px 0;
+  }
+}
+
+// Media query pour des écrans plus petits
+@media (max-width: 993px) {
+  .lodge {
+    &__collapse {
+      gap: 35px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .lodge {
+    &__collapse {
+      flex-direction: column;
+      gap: 20px;
+    }
+  }
+}
