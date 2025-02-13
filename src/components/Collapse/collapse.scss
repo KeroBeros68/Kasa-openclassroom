@@ -6,7 +6,10 @@
   border-radius: 5px;
   background: #ff6060;
   color: white;
-
+  @media (max-width: 767px) {
+    height: 38px;
+    font-size: 9px;
+  }
   &__btn {
     transform: rotate(180deg);
     transition: 1s;
@@ -14,6 +17,9 @@
     &.open {
       transform: rotate(0);
       transition: 1s;
+    }
+    @media (max-width: 767px) {
+      height: 20px;
     }
   }
 }
@@ -26,8 +32,8 @@
   background: #f6f6f673;
   transform-origin: top;
   transition:
-    transform 0.5s ease-in-out,
-    height 0.7s ease-in-out,
+    transform 0.1s ease-in-out,
+    height 0.9s ease-in-out,
     padding 0.9s ease-in-out;
   &.open {
     transform: scaleY(1);

@@ -1,0 +1,13 @@
+.rating {
+  display: flex;
+  justify-content: right;
+  gap: 5px;
+  &__star {
+    width: 36px;
+    height: 36px;
+    @media (max-width: 767px) {
+      width: 19px;
+      height: 19px;
+    }
+  }
+}

@@ -3,7 +3,6 @@
   min-width: 335px;
   width: 100%;
   max-height: 415px;
-  min-height: 255px;
   height: 100%;
   position: relative;
   overflow: hidden;
@@ -11,19 +10,33 @@
     display: flex;
     width: 100%;
     height: 100%;
-    transition: transform 0.5s ease-in-out; // ✅ Animation fluide
   }
   &__photos {
+    position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 25px;
     object-fit: cover;
     flex-shrink: 0;
-    transition: opacity 0.5s ease-in-out;
+    transition:
+      transform 0.5s ease-in-out,
+      opacity 0.5s ease-in-out;
     opacity: 0;
   }
+
   .active {
     opacity: 1;
+    transform: translateX(0); /* Ramène l'image au centre */
+  }
+
+  .exit-left {
+    opacity: 0;
+    transform: translateX(-100%); /* Glisse vers la gauche */
+  }
+
+  .exit-right {
+    opacity: 0;
+    transform: translateX(100%); /* Glisse vers la droite */
   }
   &__btn {
     border: none;
@@ -69,6 +82,7 @@
 
 @media (max-width: 767px) {
   .carrousel {
+    max-height: 255px;
     &__btn {
       scale: 1;
     }

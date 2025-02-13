@@ -7,16 +7,26 @@ function Gallery() {
   const [lodges, setLodges] = useState([])
 
   useEffect(() => {
-    fetch('/data.json') // Chemin depuis `public/`
-      .then((response) => response.json()) // Convertit en JSON
-      .then((json) => setLodges(json)) // Stocke les données dans le state
+    fetch('/data.json')
+      .then((response) => response.json())
+      .then((json) => setLodges(json))
   }, [])
+
+  function slugify(text) {
+    return text
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase()
+      .replace(/\s+/g, '_')
+      .replace(/[^a-z0-9_]/g, '')
+  }
+
   return (
     <div className="gallery">
       {lodges.map((lodge) => (
         <Link
           key={`${lodge.id}`}
-          to={`/lodges/${lodge.id}`}
+          to={`/lodges/${slugify(lodge.title)}`}
           state={{ lodgeData: lodge }}
         >
           <Card title={lodge.title} cover={lodge.cover} />

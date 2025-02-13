@@ -15,15 +15,29 @@ function Collapse({ title, text }) {
           className={'collapse__headder__btn ' + (open && 'open')}
           onClick={() => setOpen((prev) => !prev)}
           alt="toggle collapse"
+          aria-roledescription="button"
         />
       </div>
-      <div className={'collapse__content ' + (open && 'open')}>{text}</div>
+      <div
+        className={'collapse__content ' + (open && 'open')}
+        aria-hidden={open ? 'false' : 'true'}
+      >
+        {Array.isArray(text) ? (
+          <ul>
+            {text.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
+          </ul>
+        ) : (
+          <p>{text}</p>
+        )}
+      </div>
     </div>
   )
 }
 
 Collapse.propTypes = {
   title: PropTypes.string.isRequired,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
 }
 export default Collapse

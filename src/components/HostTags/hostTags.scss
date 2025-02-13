@@ -1,0 +1,26 @@
+.host {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: right;
+  &__title {
+    color: #ff6060;
+    font-size: 18px;
+    font-weight: 500;
+    white-space: pre-line;
+    text-align: right;
+    line-height: 142.6%;
+    @media (max-width: 480px) {
+      font-size: 12px;
+    }
+  }
+  &__img {
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+    @media (max-width: 480px) {
+      width: 32px;
+      height: 32px;
+    }
+  }
+}

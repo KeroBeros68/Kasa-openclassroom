@@ -1,5 +1,7 @@
 import Carrousel from '../../components/Carrousel'
 import Collapse from '../../components/Collapse'
+import HostTags from '../../components/HostTags'
+import Rating from '../../components/Rating'
 import Tags from '../../components/Tags'
 import './lodges.scss'
 import { Navigate, useLocation } from 'react-router'
@@ -7,11 +9,11 @@ import { Navigate, useLocation } from 'react-router'
 function Lodges() {
   const location = useLocation()
   const lodge = location.state?.lodgeData
-  let equipments = lodge.equipments
 
   if (!lodge) {
     return <Navigate to={'/error'} />
   }
+
   return (
     <main className="lodge">
       <Carrousel photos={lodge.pictures} />
@@ -27,11 +29,14 @@ function Lodges() {
             ))}
           </div>
         </div>
-        <div>nom photo etoile</div>
+        <div className="lodge__container--droite">
+          <HostTags host={lodge.host} />
+          <Rating rate={lodge.rating} />
+        </div>
       </div>
       <div className="lodge__collapse">
         <Collapse title="Description" text={lodge.description} />
-        <Collapse title="Equipements" text="ok" />
+        <Collapse title="Equipements" text={lodge.equipments} />
       </div>
     </main>
   )

@@ -3,11 +3,26 @@
   background: #ff6060;
   min-width: 115px;
   height: 25px;
-  padding: 3px 20px 2px;
+  padding: 0px 20px;
   text-align: center;
+  line-height: 150%;
   &__title {
     color: white;
     font-size: 14px;
     font-weight: 700;
+  }
+}
+
+// Media query pour des écrans plus petits
+@media (max-width: 993px) {
+}
+
+@media (max-width: 767px) {
+  .tag {
+    height: 18px;
+    line-height: 100%;
+    &__title {
+      font-size: 10px;
+    }
   }
 }

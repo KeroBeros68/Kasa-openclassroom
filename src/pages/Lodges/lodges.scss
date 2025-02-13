@@ -8,6 +8,7 @@
   align-items: center;
   &__tag {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     margin-top: 20px;
   }
@@ -24,18 +25,31 @@
   }
   &__collapse {
     max-width: 1240px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 76px;
-    & h2 {
+    h2 {
       font-size: 18px;
+      @media (max-width: 767px) {
+        font-size: 13px;
+      }
     }
   }
   &__container {
     max-width: 1240px;
     width: 100%;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
     margin: 30px 0 24px 0;
+    &--droite {
+      display: flex;
+      flex-direction: column;
+      gap: 21px;
+    }
+  }
+  ul {
+    list-style: none;
+    padding: 0;
   }
 }
 
@@ -50,8 +64,26 @@
 
 @media (max-width: 767px) {
   .lodge {
+    &__title {
+      &--first {
+        font-size: 18px;
+      }
+      &--second {
+        font-size: 14px;
+      }
+    }
+    &__container {
+      grid-template-columns: 1fr;
+      gap: 16px;
+      &--droite {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+      }
+    }
     &__collapse {
-      flex-direction: column;
+      grid-template-columns: 1fr;
       gap: 20px;
     }
   }

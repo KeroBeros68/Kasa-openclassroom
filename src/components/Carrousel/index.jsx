@@ -5,34 +5,32 @@ import { useState } from 'react'
 
 function Carrousel({ photos }) {
   const [indexPhotos, setIndex] = useState(0)
+  const [prevIndex, setPrevIndex] = useState(3)
+  const [nextIndex, setNextIndex] = useState(1)
+  const [direction, setDirection] = useState('next')
 
   function next() {
-    if (indexPhotos === photos.length - 1) {
-      setIndex(0)
-    } else {
-      setIndex(indexPhotos + 1)
-    }
+    setDirection('next')
+    setPrevIndex(indexPhotos)
+    setIndex((prevIndex) => (prevIndex + 1) % photos.length)
+    setNextIndex((indexPhotos + 2) % photos.length)
   }
 
   function prev() {
-    if (indexPhotos === 0) {
-      setIndex(photos.length - 1)
-    } else {
-      setIndex(indexPhotos - 1)
-    }
+    setDirection('prev')
+    setPrevIndex(indexPhotos)
+    setIndex((prevIndex) => (prevIndex - 1 + photos.length) % photos.length)
+    setNextIndex((indexPhotos - 2 + photos.length) % photos.length)
   }
 
   return (
     <div className="carrousel">
-      <div
-        className="carrousel__container"
-        style={{ transform: `translateX(${-indexPhotos * 100}%)` }}
-      >
+      <div className="carrousel__container">
         {photos.map((photo, index) => (
           <img
             key={index}
             src={photo}
-            className={`carrousel__photos ${index === indexPhotos ? 'active' : ''}`}
+            className={`carrousel__photos ${index === indexPhotos ? 'active' : ''} ${index === prevIndex ? (direction === 'next' ? 'exit-left' : 'exit-right') : ''} ${index === nextIndex ? (direction === 'prev' ? 'exit-left' : 'exit-right') : ''}`}
             alt={`Slide ${index + 1}`}
           />
         ))}
