@@ -7,9 +7,7 @@ function Gallery() {
   const [lodges, setLodges] = useState([])
 
   useEffect(() => {
-    fetch(
-      'https://github.com/KeroBeros68/Kasa-openclassroom/blob/main/public/data.json',
-    )
+    fetch('/data.json')
       .then((response) => response.json())
       .then((json) => setLodges(json))
   }, [])
